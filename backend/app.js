@@ -14,7 +14,7 @@ const d = new Date();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://tu-f-assessment.vercel.app/",
+    origin: "https://tu-f-assessment.vercel.app",
     credentials: true,
   })
 );
