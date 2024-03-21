@@ -14,12 +14,10 @@ const d = new Date();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://tu-f-assessment.vercel.app/",
+    origin: "https://tu-f-assessment.vercel.app",
     credentials: true,
   })
 );
-
-app.get('/',(req,res)=>res.send("Homepage"))
 
 app.get("/snippets", async (req, res) => {
   try {
