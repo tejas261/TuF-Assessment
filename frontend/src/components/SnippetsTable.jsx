@@ -22,7 +22,7 @@ const SnippetsTable = () => {
   async function handleExecuteSnippet(id) {
     try {
       setloading(true)
-      const response = await axios.post("http://localhost:8000/api/run-code", {
+      const response = await axios.post("https://tuf-assessment.onrender.com/run-code", {
         id,
       });
       setSnippetOutputs((prevState) => ({

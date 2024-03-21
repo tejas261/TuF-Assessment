@@ -21,7 +21,7 @@ app.use(
 
 app.get('/',(req,res)=>res.send("Homepage"))
 
-app.get("/api/snippets", async (req, res) => {
+app.get("/snippets", async (req, res) => {
   try {
     const data = await db.manyOrNone(`SELECT * FROM snippets`);
     res.json({ data: data }).status(200);
@@ -30,7 +30,7 @@ app.get("/api/snippets", async (req, res) => {
   }
 });
 
-app.post("/api/snippets", async (req, res) => {
+app.post("/snippets", async (req, res) => {
   const { username, language, stdin, code_snippet } = req.body;
   try {
     await db.oneOrNone(
@@ -49,7 +49,7 @@ app.post("/api/snippets", async (req, res) => {
   }
 });
 
-app.post('/api/run-code',async (req,res)=>{
+app.post('/run-code',async (req,res)=>{
   const {id } = req.body
   console.log("Id",id);
   const snippet = await db.oneOrNone('SELECT * FROM snippets WHERE id = $1', [id]);

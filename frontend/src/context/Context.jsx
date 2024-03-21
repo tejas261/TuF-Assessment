@@ -17,7 +17,7 @@ const FormContextProvider = ({ children }) => {
     
       const fetchSnippets = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/snippets');
+          const response = await axios.get('https://tuf-assessment.onrender.com/snippets');
           const data = await response.data;
           // console.log(data.data);
           return data.data
@@ -28,7 +28,7 @@ const FormContextProvider = ({ children }) => {
     
       const addSnippet = async (formData) => { 
         try {
-          const response = await axios.post('http://localhost:8000/api/snippets', formData);
+          const response = await axios.post('https://tuf-assessment.onrender.com/snippets', formData);
           const data = await response.data;
           console.log(data);
           navigate('/getSnippets')
