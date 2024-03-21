@@ -19,6 +19,8 @@ app.use(
   })
 );
 
+app.get('/',(req,res)=>res.send("Homepage"))
+
 app.get("/api/snippets", async (req, res) => {
   try {
     const data = await db.manyOrNone(`SELECT * FROM snippets`);
